@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Soccer - Professional Soccer Training</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '⚽';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn::before {
+            content: '💬';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2a5298;
+            margin-bottom: 40px;
+        }
+
+        .about-content {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.8;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: #2a5298;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .whatsapp-btn {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+
+            .about h2 {
+                font-size: 2em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>⚽ Learn Soccer</h1>
+        <p>Spreading the Love of Soccer for Only $10 per Person (1 Hour Sessions - Cash Only)</p>
+        <a href="https://wa.me/14256513644" class="whatsapp-btn">Contact Us on WhatsApp</a>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">Click to chat and book your training session!</p>
+        
+        <!-- QR Code Section -->
+        <div style="margin-top: 40px;">
+            <p style="font-size: 1.1em; margin-bottom: 15px;">Or scan this QR code:</p>
+            <div style="background: white; padding: 20px; border-radius: 15px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <div id="qrcode1" style="width: 200px; height: 200px;"></div>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Scan with your phone camera to chat with us!</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <p>
+                We're a group of young soccer players who love the game and want to share that passion with others. 
+                Our mission is simple: spread the love of soccer by offering affordable training sessions for anyone who wants to learn and improve.
+            </p>
+            <p style="margin-top: 20px;">
+                Our coaches are 13-14 year olds who play at a high level and understand what it's like to be on the field. 
+                We're not professionals – we're just kids who love soccer and want to help others enjoy the beautiful game as much as we do!
+            </p>
+            <p style="margin-top: 20px; font-weight: 600; color: #2a5298; font-size: 1.3em;">
+                💵 Cheap! Only $10 per person for 1 hour - Cash only
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">👦</div>
+            <h3>Youth Programs</h3>
+            <p>Age-appropriate training for kids and teenagers to develop fundamental skills</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚽</div>
+            <h3>Skill Development</h3>
+            <p>Focus on dribbling, passing, shooting, and tactical awareness</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👨‍🏫</div>
+            <h3>Young High-Level Coaches</h3>
+            <p>13-14 year old coaches who play at a high level and truly understand the game</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3>Fun & Friendly</h3>
+            <p>Learn in a supportive environment with other soccer enthusiasts</p>
+        </div>
+    </section>
+
+    <!-- Training Schedule Section -->
+    <section style="max-width: 1000px; margin: 80px auto; padding: 0 20px;">
+        <h2 style="text-align: center; font-size: 2.5em; color: #2a5298; margin-bottom: 40px;">Weekly Training Schedule</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Saturday Schedule -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <h3 style="font-size: 2em; margin-bottom: 20px; text-align: center;">Saturday</h3>
+                
+                <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; margin-bottom: 15px; color: #333;">
+                    <h4 style="color: #2a5298; font-size: 1.3em; margin-bottom: 10px;">⚽ Group Sessions</h4>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Time:</strong> Contact us for times</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Duration:</strong> 1 hour</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Price:</strong> $10 per person</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; color: #333;">
+                    <h4 style="color: #2a5298; font-size: 1.3em; margin-bottom: 10px;">👤 1-on-1 Sessions</h4>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Time:</strong> By appointment</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Duration:</strong> 1 hour</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Price:</strong> $10 per person</p>
+                </div>
+            </div>
+
+            <!-- Sunday Schedule -->
+            <div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 30px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <h3 style="font-size: 2em; margin-bottom: 20px; text-align: center;">Sunday</h3>
+                
+                <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; margin-bottom: 15px; color: #333;">
+                    <h4 style="color: #2a5298; font-size: 1.3em; margin-bottom: 10px;">⚽ Group Sessions</h4>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Time:</strong> Contact us for times</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Duration:</strong> 1 hour</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Price:</strong> $10 per person</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; color: #333;">
+                    <h4 style="color: #2a5298; font-size: 1.3em; margin-bottom: 10px;">👤 1-on-1 Sessions</h4>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Time:</strong> By appointment</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Duration:</strong> 1 hour</p>
+                    <p style="font-size: 1.1em; margin: 5px 0;"><strong>Price:</strong> $10 per person</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f8f9fa; border-radius: 15px;">
+            <h3 style="color: #2a5298; font-size: 1.8em; margin-bottom: 15px;">📱 Contact Us to Book Your Session!</h3>
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 20px;">Message us on WhatsApp to schedule your training time</p>
+            <a href="https://wa.me/14256513644" style="display: inline-block; background: #25D366; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-size: 1.2em; font-weight: 600;">💬 Message on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Ready to Join Us?</h2>
+        <p>Join our $10 training sessions and discover the joy of soccer!</p>
+        <a href="https://wa.me/14256513644" class="whatsapp-btn">Message Us on WhatsApp</a>
+        
+        <!-- QR Code Section -->
+        <div style="margin-top: 50px;">
+            <p style="font-size: 1.2em; margin-bottom: 20px;">Can't click? Scan this QR code with your phone:</p>
+            <div style="background: white; padding: 20px; border-radius: 15px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <div id="qrcode2" style="width: 200px; height: 200px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Learn Soccer. All rights reserved.</p>
+        <p>Spreading the Love of Soccer for Only $10</p>
+    </footer>
+    <script>
+        // Generate QR codes when page loads
+        window.addEventListener('load', function() {
+            // First QR code
+            new QRCode(document.getElementById("qrcode1"), {
+                text: "https://wa.me/14256513644",
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            // Second QR code
+            new QRCode(document.getElementById("qrcode2"), {
+                text: "https://wa.me/14256513644",
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+    </script>
+</body>
+</html>

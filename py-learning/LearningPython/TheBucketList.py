@@ -1,0 +1,2 @@
+def bucketlist(cows):
+    pass
