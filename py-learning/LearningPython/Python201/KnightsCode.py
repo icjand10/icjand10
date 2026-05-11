@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(10000000)
 size = 5
 tours = 0
 visited = []
