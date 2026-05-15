@@ -13,7 +13,7 @@ def solve():
 
         for i in range(directions):
             nx, ny = sx + directions(i), sy + directions(i)
-            if not visited(nx, ny) and maze(nx, ny) == 0:
+            if not visited(nx, ny) and maze(nx, ny) == "*":
                 visited.append(nx, ny)
                 sx, sy = nx, ny
                 if maze(nx, ny) == maze(n, n):
