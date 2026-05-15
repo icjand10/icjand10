@@ -19,6 +19,3 @@ if maze[0][0] == 1 or maze[n-1][n-1] == 1:
     print(0)
 else:
     print(floodfill(0, 0))
-
-
-
